@@ -12,13 +12,16 @@
         MinHeight="60"
         MinWidth="120"
         Topmost="True"
+        WindowStartupLocation="Manual"
+        Position="10,100"
         ExtendClientAreaChromeHints="NoChrome"
         ExtendClientAreaToDecorationsHint="True"
         Title="Pitch Pipe">
 
   <Grid RowDefinitions="Auto,*" ColumnDefinitions="*,Auto">
-    <!--<TextBlock Grid.Row="0" Grid.Column="0" Text="Pitch Pipe" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
-    <Button Grid.Column="1" Background="Transparent" Click="Close_Click">X</Button>
+    <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Pitch Pipe" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"
+               IsHitTestVisible="False"/>
+    <Button Grid.Column="1" Background="Transparent" VerticalAlignment="Center" Click="Close_Click">x</Button>
 
     <views:MainView Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
   </Grid>

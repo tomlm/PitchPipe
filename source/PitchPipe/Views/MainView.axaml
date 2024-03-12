@@ -13,7 +13,7 @@
   </Design.DataContext>
 
   <WrapPanel >
-    <ButtonSpinner Margin="10,5,5,5" Spin="ButtonSpinner_Spin" HorizontalAlignment="Center">
+    <ButtonSpinner Margin="10,5,5,5" FontSize="12" Spin="ButtonSpinner_Spin" HorizontalAlignment="Center">
       <TextBlock Text="{Binding Octave}"/>
     </ButtonSpinner>
 
