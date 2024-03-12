@@ -1,0 +1,41 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:PitchPipe.ViewModels" Background="Transparent"
+             mc:Ignorable="d" d:DesignWidth="120" d:DesignHeight="480"
+             x:Class="PitchPipe.Views.MainView"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+
+  <WrapPanel >
+    <ButtonSpinner Margin="10,5,5,5" Spin="ButtonSpinner_Spin" HorizontalAlignment="Center">
+      <TextBlock Text="{Binding Octave}"/>
+    </ButtonSpinner>
+
+    <Button Width="50" Height="50" CornerRadius="25" Click="ToggleSharp_Click" Margin="35,5,35,5" Background="DarkSlateBlue">
+      <TextBlock Text="♯/♭" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" />
+    </Button>
+
+    <ItemsControl Grid.Row="1" ItemsSource="{Binding Notes}" Background="Transparent">
+      <ItemsControl.ItemsPanel>
+        <ItemsPanelTemplate>
+          <WrapPanel />
+        </ItemsPanelTemplate>
+      </ItemsControl.ItemsPanel>
+      <ItemsControl.ItemTemplate>
+        <DataTemplate>
+          <Button Width="50" Height="50" CornerRadius="25" Click="Note_Click" Margin="5" Background="DarkSlateBlue">
+            <TextBlock Text="{Binding}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" />
+          </Button>
+        </DataTemplate>
+      </ItemsControl.ItemTemplate>
+    </ItemsControl>
+
+  </WrapPanel>
+
+</UserControl>
