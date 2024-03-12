@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:PitchPipe.Views"
-        mc:Ignorable="d" d:DesignWidth="120" d:DesignHeight="480"
+        mc:Ignorable="d" d:DesignWidth="120" d:DesignHeight="500"
         x:Class="PitchPipe.Views.MainWindow"
         Icon="/Assets/PitchPipe.ico"
         Width="120"
@@ -17,6 +17,12 @@
         ExtendClientAreaChromeHints="NoChrome"
         ExtendClientAreaToDecorationsHint="True"
         Title="Pitch Pipe">
+  
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
 
   <Grid RowDefinitions="Auto,*" ColumnDefinitions="*,Auto">
     <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Pitch Pipe" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"
