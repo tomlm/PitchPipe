@@ -8,7 +8,22 @@
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <Platforms>AnyCPU;ARM64;x64</Platforms>
+    <StartupObject></StartupObject>
+    <ApplicationIcon>PitchPipe.ico</ApplicationIcon>
+    <Title>Pitch Pipe</Title>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>True</SelfContained>
+    <PackageIcon>PitchPipe.png</PackageIcon>
   </PropertyGroup>
+  <ItemGroup>
+    <Content Include="PitchPipe.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\PitchPipe\Assets\PitchPipe.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
